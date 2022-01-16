@@ -1,4 +1,4 @@
-# Liverpool Merchendise Development Pahse
+# Liverpool Merchendise Development Phase
 3rd semester Database Management Systems Project
 
 This is a full stack project that contains a customer side and an admin side, both of them connected to the same database.
