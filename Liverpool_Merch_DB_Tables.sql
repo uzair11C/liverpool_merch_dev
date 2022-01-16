@@ -34,8 +34,8 @@ create table Product
 	price int, 
 	quantity int,
 	Type varchar(20),
-	constraint CustID foreign key (CustomerID) References Customer(CustomerID),
-	constraint AdminID foreign key (AdminID) references Admin(AdminID)
+	CustID int foreign key (CustomerID) References Customer(CustomerID),
+	AdminID int foreign key (AdminID) references Admin(AdminID),
 )
 
 create table SaleInfo
