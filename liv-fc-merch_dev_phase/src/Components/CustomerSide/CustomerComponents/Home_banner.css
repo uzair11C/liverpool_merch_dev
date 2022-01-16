@@ -1,0 +1,18 @@
+.banner-bg
+{
+    background-image: url('../../../assets/images/banner-1-flag.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.banner-bg h2
+{
+    color: #fff;
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Roboto',sans-serif;
+}

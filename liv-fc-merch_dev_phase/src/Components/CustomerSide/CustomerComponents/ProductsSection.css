@@ -1,0 +1,32 @@
+.nav-link.active
+{
+    color: rgb(1, 255, 14) !important; 
+}
+
+.nav-link
+{
+    color: red !important;
+    transition: 0.4s ease-in-out;
+    font-size: 30px;
+}
+
+.nav-link:hover
+{
+    color: rgb(1, 255, 14) !important;
+    border-color: red red !important;
+}
+
+.nav-tabs
+{
+    border-bottom: 1px solid red !important;
+}
+
+.nav-tabs .nav-link.active
+{
+    border-color: red red red !important;
+}
+
+.buy-button
+{
+    background-color: red;
+}
