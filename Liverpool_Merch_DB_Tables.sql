@@ -1,10 +1,12 @@
+--Create Table Queries
+
 CREATE TABLE Customer
 ( 
-  CustomerID          INT primary key IDENTITY(1,1) constraint ID NOT NULL,
+  CustomerID  INT primary key IDENTITY(1,1) constraint ID NOT NULL,
   FirstName   VARCHAR(30),
   LastName    VARCHAR(30),
-  Password	  varchar(50),
-  Email		  varchar(50),
+  Email		  varchar(30),
+  Password	  varchar(15),
   Country     VARCHAR(10),
   City        VARCHAR(10),
   Street      INT,
@@ -14,9 +16,11 @@ CREATE TABLE Customer
 
 CREATE TABLE Admin
 ( 
-  AdminID          INT primary key IDENTITY(1,1) constraint ID NOT NULL,
+  AdminID     INT primary key IDENTITY(1,1) constraint ID NOT NULL,
   FirstName   VARCHAR(30),
   LastName    VARCHAR(30),
+  Email		  varchar(30),
+  Password	  varchar(15),
   Country     VARCHAR(10),
   City        VARCHAR(10),
   Street      INT,
@@ -24,33 +28,61 @@ CREATE TABLE Admin
   UserType    VARCHAR(10)
 )
 
-drop table Customer
-drop table Admin
-
 create table Product 
 (
-	ProductID int Primary Key identity(1,1) constraint ProductID NOT NULL,
-	Name varchar (50), 
-	price int, 
-	quantity int,
-	Type varchar(20),
-	CustID int foreign key (CustomerID) References Customer(CustomerID),
-	AdminID int foreign key (AdminID) references Admin(AdminID),
+	ProductID		int Primary Key identity(1,1) constraint ProductID NOT NULL,
+	ProductName		varchar (50), 
+	Price			int, 
+	Quantity		int,
+	ImageURL		nvarchar(2083),
+	ProductType		varchar(20),
+	CustomerID		int foreign key (CustomerID) References Customer(CustomerID),
+	AdminID			int foreign key (AdminID) references Admin(AdminID)
 )
 
 create table SaleInfo
 (
-	purchaseNumber int primary key Constraint purchaseNumber NOT NULL,
-	PurchasedItem varchar (50), 
-	PurchaseAmount int,
-	TotalPurchaseAmount int, 
-	constraint fkID foreign key References Customer(ID) 
+	PurchaseNumber			int primary key Constraint purchaseNumber NOT NULL,
+	PurchasedItem			varchar (50), 
+	PurchaseAmount			int,
+	TotalPurchaseAmount		int, 
+	CustomerID				int foreign key (CustomerID) References Customer(CustomerID)
 )
 
-create table bill
+CREATE TABLE TotalSales
 (
-	billNumber int primary key,
-	billAmount int,
-	id int,
-	constraint FK_Bill_Cust FOREIGN KEY references Customer (ID)
+	SaleQuantity	int,
+	AdminID			int foreign key (AdminID) references Admin(AdminID),
+	CustomerID		int foreign key (CustomerID) References Customer(CustomerID),
+	CONSTRAINT PK PRIMARY KEY(AdminID,CustomerID)
+)
+
+create table Bill
+(
+	BillId		int primary key IDENTITY(1,1) Constraint BillId NOT NULL,
+	BillNumber	int,
+	BillAmount	int,
+	CustomerID	int foreign key (CustomerID) References Customer(CustomerID)
 );
+
+--Display Queries
+
+select * from Admin
+select * from Customer
+select * from Product
+select * from Bill
+select * from SaleInfo
+select * from TotalSales
+
+
+
+
+
+--Drop Table Queries
+
+DROP TABLE bill
+DROP TABLE Product
+DROP TABLE SaleInfo
+DROP TABLE TotalSales
+DROP TABLE Admin
+DROP TABLE Customer

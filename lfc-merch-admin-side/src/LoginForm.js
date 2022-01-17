@@ -15,7 +15,7 @@ const LoginForm = ({ Login , error }) =>
         <div className="App">
         <form onSubmit={submitHandler}>
             <div className="form-inner">
-                <h2>Customer Login</h2>
+                <h2>Login</h2>
                 {
                     (error !== "")
                     ?

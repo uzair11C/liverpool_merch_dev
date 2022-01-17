@@ -45,9 +45,21 @@ class Customer
     }
 }
 
+class Bill
+{
+    constructor(BillId,BillNumber,BillAmount,CustomerID)
+    {
+        this.BillId = BillId
+        this.BillNumber = BillNumber
+        this.BillAmount = BillAmount
+        this.CustomerID = CustomerID
+    }
+}
+
 module.exports = 
                 {
                     Product,
                     Admin,
-                    Customer
+                    Customer,
+                    Bill
                 }
