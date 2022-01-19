@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LoginForm from './LoginForm';
-import CustomerApp from './Components/CustomerSide/CutomerApp'
-import Footer from './Components/CustomerSide/CustomerComponents/Footer';
+import CustomerApp from './Components/CutomerApp'
+import Footer from './Footer';
 // import { reactLocalStorage } from 'reactjs-localstorage';
 
 function App() {

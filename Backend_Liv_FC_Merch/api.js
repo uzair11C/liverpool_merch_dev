@@ -2,6 +2,8 @@ const dboperations = require('./dboperations')
 var express = require('express');
 var cors = require('cors');
 var app = express();
+var router = express.Router();
+var Product = require('./tables')
 
 app.use(express.urlencoded
         (
@@ -20,7 +22,7 @@ app.use((request,response,next) =>
     next();
  })
 
-app.get('/product',(request,response) =>
+app.get('/products',(request,response) =>
 {
     dboperations.getProduct().then(result => 
         {
@@ -28,10 +30,10 @@ app.get('/product',(request,response) =>
         })
 })
 
-app.post('/product',(request,response) =>
+app.post('/products',(request,response) =>
 {
     let product = {...request.body}
-    dboperations.addProduct(product).then(
+    dboperations.addProduct(Product.Product).then(
         result => 
         {
             response.status(201).json(result);

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import "./Header.css";
+import './Header.css'
 
 const Header = () => 
 {
@@ -8,7 +8,7 @@ const Header = () =>
         //<nav className={cheader ? "cheader active navbar navbar-expand-md" : "cheader navbar navbar-expand-md"}>
         <nav className={"navbar navbar-expand-lg"}>
 
-            <Link className="navbar-brand" to='/'>
+            <Link className="navbar-brand" to='/admin-dashboard/'>
                 {/* <h2>Logo</h2> */}
                 <img src="assets/images/Icon-for-profiles.png" alt='Logo' />
             </Link>

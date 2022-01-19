@@ -1,6 +1,6 @@
 import React from 'react'
-import HomeBanner from './CustomerComponents/Home_banner'
-import ProductsSection from './CustomerComponents/ProductsSection'
+import HomeBanner from './Home_banner'
+import ProductsSection from './ProductsSection'
 
 function CustomerHome()
 {

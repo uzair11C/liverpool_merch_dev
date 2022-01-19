@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./ProductsSection.css";
 
 function ProductsSection()
 {
+    const[addName,setAddName] = useState([])
+    const[addPrice,setAddPrice] = useState([])
+
+    const AddToCart = () =>
+    {
+        setAddName(this.Name)
+        setAddPrice(this.Price)
+        window.alert('Added to Cart!')
+    }
+
     return (
         <section style={{
                             marginBottom: "35px",
@@ -39,7 +49,7 @@ function ProductsSection()
                                 </div>
                                 <div className='col-lg-4'>
                                     <div style={{
-                                        backgroundColor:"cyan",
+                                       border: "2px solid #01FF0E",
                                         borderRadius:"10px",
                                         display:'flex',
                                         flexDirection:'column',
@@ -53,10 +63,12 @@ function ProductsSection()
                                         width='300px' 
                                         height='240px' 
                                         /> 
-                                        <h3>Football Black</h3>
+                                        <h3 style={{marginTop:"20px"}}>Football Black</h3>
                                         <h3>Price: 30$</h3>
                                         <p>Quantity: 5</p>
-                                        <button className='buy-button'>Buy</button>
+                                        <button onClick={AddToCart} className='buy-button'>
+                                            Add To Cart
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +83,7 @@ function ProductsSection()
                                 </div>
                                 <div className='col-lg-4'>
                                     <div style={{
-                                        backgroundColor:"cyan",
+                                       border: "2px solid #01FF0E",
                                         borderRadius:"10px",
                                         display:'flex',
                                         flexDirection:'column',
@@ -85,10 +97,10 @@ function ProductsSection()
                                         width='300px' 
                                         height='240px' 
                                         /> 
-                                        <h3>Football Black</h3>
+                                        <h3 style={{marginTop:"20px"}}>Football Black</h3>
                                         <h3>Price: 30$</h3>
                                         <p>Quantity: 5</p>
-                                        <button className='buy-button'>Buy</button>
+                                        <button className='buy-button'>Add To Cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +115,7 @@ function ProductsSection()
                                 </div>
                                 <div className='col-lg-4'>
                                     <div style={{
-                                        backgroundColor:"cyan",
+                                       border: "2px solid #01FF0E",
                                         borderRadius:"10px",
                                         display:'flex',
                                         flexDirection:'column',
@@ -117,10 +129,10 @@ function ProductsSection()
                                         width='300px' 
                                         height='240px' 
                                         /> 
-                                        <h3>Football Black</h3>
+                                        <h3 style={{marginTop:"20px"}}>Football Black</h3>
                                         <h3>Price: 30$</h3>
                                         <p>Quantity: 5</p>
-                                        <button className='buy-button'>Buy</button>
+                                        <button className='buy-button'>Add To Cart</button>
                                     </div>
                                 </div>
                             </div>

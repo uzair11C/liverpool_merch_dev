@@ -80,7 +80,7 @@ select * from TotalSales
 
 --Drop Table Queries
 
-DROP TABLE bill
+DROP TABLE Bill
 DROP TABLE Product
 DROP TABLE SaleInfo
 DROP TABLE TotalSales

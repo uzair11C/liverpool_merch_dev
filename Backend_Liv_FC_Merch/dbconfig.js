@@ -3,7 +3,7 @@ const config = {
     password: '123',
     driver: "msnodesqlv8",
     server: 'UZAIR-S_PC\\SQLEXPRESS',
-    database: 'LearningExpressJS',
+    database: 'Liverpool_FC_Merch_Store',
     options: {
         trustedconnection: true,
         enableArithAbort : true, 

@@ -1,14 +1,14 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Header from '../../Header';
+import Header from '../Header';
 import CustomerHome from "./CustomerHome";
 
 function CustomerApp()
 {
   return (
-    <Router>
+    <Router basename="/customerhome">
       <Header />
       <Routes> {/*switch has been renamed to Routes*/}
-        <Route path = {'/','/customerhome/'} element={<CustomerHome />}></Route>
+        <Route path = '/' element={<CustomerHome />}></Route>
       </Routes>
     </Router>
   );

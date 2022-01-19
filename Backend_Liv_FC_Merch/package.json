@@ -15,7 +15,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "msnodesqlv8": "^2.4.4",
-    "mssql": "^7.3.0",
+    "mssql": "^7.3.0"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }

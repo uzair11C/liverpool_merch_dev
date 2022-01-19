@@ -1,13 +1,15 @@
 class Product
 {
-    constructor(ProductID,Name,ImageURL,Type,Price,Quantity)
+    constructor(ProductID,ProductName,ImageURL,ProductType,Price,Quantity,CustomerID,AdminID)
     {
         this.ProductID = ProductID
-        this.Name = Name
-        this.ImageURL = ImageURL
-        this.Type = Type
+        this.ProductName = ProductName
         this.Price = Price
         this.Quantity = Quantity
+        this.ImageURL = ImageURL
+        this.ProductType = ProductType
+        this.CustomerID = CustomerID
+        this.AdminID = AdminID
     }
 }
 
@@ -52,7 +54,27 @@ class Bill
         this.BillId = BillId
         this.BillNumber = BillNumber
         this.BillAmount = BillAmount
-        this.CustomerID = CustomerID
+        Customer.CustomerID = CustomerID
+    }
+}
+
+class SaleInfo
+{
+    constructor(PurchaseNumber,PurchasedItem,PurchaseAmount,TotalPurchaseAmount,CustomerID)
+    {
+        this.PurchaseNumber = PurchaseNumber
+        this.PurchasedItem = PurchasedItem
+        this.PurchaseAmount = PurchaseAmount
+        this.TotalPurchaseAmount = TotalPurchaseAmount
+        Customer.CustomerID = Customer.CustomerID
+    }
+}
+
+class TotalSales
+{
+    constructor(SaleQuantity,AdminID,CustomerID)
+    {
+        
     }
 }
 
@@ -61,5 +83,7 @@ module.exports =
                     Product,
                     Admin,
                     Customer,
-                    Bill
+                    Bill,
+                    SaleInfo,
+                    TotalSales
                 }

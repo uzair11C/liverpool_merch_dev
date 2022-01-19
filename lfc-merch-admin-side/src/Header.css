@@ -1,0 +1,21 @@
+.navbar-collapse
+{
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav h2
+{
+    color: red;
+    transition: 0.4s ease-in-out;
+}
+
+nav h2:hover
+{
+    color: rgb(0, 255, 0);
+}
+
+.nav-item
+{
+    margin-right: 30px;
+}

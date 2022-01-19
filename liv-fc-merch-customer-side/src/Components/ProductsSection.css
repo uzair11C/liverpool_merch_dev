@@ -28,5 +28,20 @@
 
 .buy-button
 {
-    background-color: red;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #c50707 50%, #ff5050 50%, #ee3939);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.4s;
+    color: #fff;
+    font-weight: 700;
+    cursor:pointer;
+    margin-bottom: 10px;
+}
+
+.buy-button:hover
+{
+    background-position: 100% 0%;
 }

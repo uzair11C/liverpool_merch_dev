@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import LoginForm from './LoginForm';
-import CustomerApp from './Components/CustomerSide/CutomerApp'
-import Footer from './Components/CustomerSide/CustomerComponents/Footer';
+import AdminApp from './Components/AdminApp'
+import Footer from './Footer';
 // import { reactLocalStorage } from 'reactjs-localstorage';
+import './App.css'
 
 function App() {
 
@@ -62,7 +63,7 @@ function App() {
             (user.email !== "" && user.password !== "") 
             ?
             (<>
-              <CustomerApp />
+              <AdminApp />
               <button className="log-tog" onClick={Logout}>Logout</button>
               <Footer />
               </>
