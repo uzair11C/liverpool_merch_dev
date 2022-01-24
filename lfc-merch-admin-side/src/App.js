@@ -9,11 +9,12 @@ function App() {
 
   const adminUser = 
   {
+    id: 1,
     email : "admin@admin.com",
     password : "admin"
   }
 
-  const [user, setUser] = useState({name:"", email:""});
+  const [user, setUser] = useState({id:"",name:"", email:""});
   const [error , setError] = useState("");
 
   // useEffect(() => 
@@ -34,6 +35,7 @@ function App() {
       console.log("Logged In!");
       setUser(
         {
+          id: details.id,
           name: details.name,
           email: details.email
         }
@@ -51,7 +53,7 @@ function App() {
     console.log("Logged out!");
     setUser(
       {
-        name:"", email:""
+        id:"",name:"", email:""
       }
     )
   }

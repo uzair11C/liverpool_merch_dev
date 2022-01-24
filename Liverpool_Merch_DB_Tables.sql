@@ -9,8 +9,9 @@ CREATE TABLE Customer
   Password	  varchar(15),
   Country     VARCHAR(10),
   City        VARCHAR(10),
+  County	  VARCHAR(10),
   Street      INT,
-  ContactNo   VARCHAR(10),
+  ContactNum   VARCHAR(10),
   UserType    VARCHAR(10)
 )
 
@@ -23,8 +24,9 @@ CREATE TABLE Admin
   Password	  varchar(15),
   Country     VARCHAR(10),
   City        VARCHAR(10),
+  County	  VARCHAR(10),
   Street      INT,
-  ContactNo   VARCHAR(10),
+  ContactNum   VARCHAR(10),
   UserType    VARCHAR(10)
 )
 
@@ -34,9 +36,8 @@ create table Product
 	ProductName		varchar (50), 
 	Price			int, 
 	Quantity		int,
-	ImageURL		nvarchar(2083),
+	ImageURL		varchar(2083),
 	ProductType		varchar(20),
-	CustomerID		int foreign key (CustomerID) References Customer(CustomerID),
 	AdminID			int foreign key (AdminID) references Admin(AdminID)
 )
 
@@ -73,6 +74,57 @@ select * from Product
 select * from Bill
 select * from SaleInfo
 select * from TotalSales
+
+--insert queries
+insert into Customer 
+(FirstName,LastName,Email,Password,Country,City,County,Street,ContactNum,UserType)
+Values 
+		('Dean','Norris','deannorr123@gmail.com','1234','England','London','Bristol',34,12345,'Customer')
+
+insert into Admin 
+(FirstName,LastName,Email,Password,Country,City,County,Street,ContactNum,UserType)
+Values 
+		('Norris','Dean','norrdean321@gmail.com','4321','England','London','Chelsea',12,54321,'Admin')
+
+insert into Admin 
+(FirstName,LastName,Email,Password,Country,City,County,Street,ContactNum,UserType)
+Values 
+		('Jurgen','Klopp','jklopp23@gmail.com','liv32','England','London','Liverpool',17,67890,'Admin')
+
+
+INSERT INTO Product 
+(ProductName, Price, Quantity, ImageURL, ProductType,AdminID)
+VALUES
+ ('Milner Kit',30,15,
+ 'https://footballtracksuits.com/wp-content/uploads/product_images/liverpool-home-vapor-match-shirt-2021-22-with-milner-7-printing-1-600x600.jpg',
+ 'Kit',
+(SELECT Customer.CustomerID from Customer),(SELECT Admin.AdminID from Admin))
+
+
+
+ --Triggers
+
+CREATE TRIGGER DeleteProduct 
+ON Product 
+FOR DELETE 
+AS
+BEGIN
+	DECLARE @Quantity INT 
+	SELECT @Quantity = (SELECT Quantity from Product)
+	DELETE FROM Product 
+	WHERE @Quantity = 0
+END
+
+ /*
+ CREATE TRIGGER addAdminID
+ ON Admin
+ AFTER INSERT
+ AS
+ BEGIN
+	Insert into Product (AdminID)
+	(SELECT (AdminID) FROM dbo.Admin)
+ END
+ */
 
 
 

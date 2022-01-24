@@ -10,7 +10,7 @@ const Header = () =>
 
             <Link className="navbar-brand" to='/admin-dashboard/'>
                 {/* <h2>Logo</h2> */}
-                <img src="assets/images/Icon-for-profiles.png" alt='Logo' />
+                <img src="./assets/images/Icon-for-profiles.png" alt='Logo' />
             </Link>
 
             <button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">

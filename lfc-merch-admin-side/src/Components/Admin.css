@@ -1,0 +1,54 @@
+.admin-section
+{
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+.d-flex button
+{
+    margin-bottom: 25px;
+}
+
+.tab-b.active
+{
+    background-color: red !important;
+    font-size: 23px;
+    color: #fff !important;
+}
+
+.tab-b
+{
+    color: rgb(0, 255, 0) !important;
+    font-size: 23px;
+    transition: ease-in;
+}
+
+.tab-b:hover
+{
+    background-color: rgb(255, 0, 0) !important;
+    color: #fff !important;
+    transition: ease-in;
+}
+
+.nav-pills
+{
+    padding: 20px;
+}
+
+.sales
+{
+    margin-left: 77px !important;
+    text-align: center;
+}
+
+.profile
+{
+    margin-left: 77px !important;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile h2
+{
+    margin-bottom: 45px;
+}

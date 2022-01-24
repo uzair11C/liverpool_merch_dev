@@ -1,6 +1,6 @@
 class Product
 {
-    constructor(ProductID,ProductName,ImageURL,ProductType,Price,Quantity,CustomerID,AdminID)
+    constructor(ProductID,ProductName,Price,Quantity,ImageURL,ProductType,AdminID)
     {
         this.ProductID = ProductID
         this.ProductName = ProductName
@@ -8,16 +8,15 @@ class Product
         this.Quantity = Quantity
         this.ImageURL = ImageURL
         this.ProductType = ProductType
-        this.CustomerID = CustomerID
         this.AdminID = AdminID
     }
 }
 
 class Admin
 {
-    constructor(ID,FirstName,LastName,Email,Password,Country,City,County,ContactNum,UserType)
+    constructor(AdminID,FirstName,LastName,Email,Password,Country,City,County,Street,ContactNum,UserType)
     {
-        this.ID = ID
+        this.AdminID = AdminID
         this.FirstName = FirstName
         this.LastName = LastName
         this.Email = Email
@@ -25,6 +24,7 @@ class Admin
         this.Country = Country
         this.City = City
         this.County = County
+        this.Street = Street
         this.ContactNum = ContactNum
         this.UserType = UserType
     }
@@ -32,9 +32,9 @@ class Admin
 
 class Customer
 {
-    constructor(ID,FirstName,LastName,Email,Password,Country,City,County,ContactNum,UserType)
+    constructor(CustomerID,FirstName,LastName,Email,Password,Country,City,County,Street,ContactNum,UserType)
     {
-        this.ID = ID
+        this.CustomerID = CustomerID
         this.FirstName = FirstName
         this.LastName = LastName
         this.Email = Email
@@ -42,6 +42,7 @@ class Customer
         this.Country = Country
         this.City = City
         this.County = County
+        this.Street = Street
         this.ContactNum = ContactNum
         this.UserType = UserType
     }
@@ -54,7 +55,7 @@ class Bill
         this.BillId = BillId
         this.BillNumber = BillNumber
         this.BillAmount = BillAmount
-        Customer.CustomerID = CustomerID
+        this.CustomerID = CustomerID
     }
 }
 
@@ -66,7 +67,7 @@ class SaleInfo
         this.PurchasedItem = PurchasedItem
         this.PurchaseAmount = PurchaseAmount
         this.TotalPurchaseAmount = TotalPurchaseAmount
-        Customer.CustomerID = Customer.CustomerID
+        this.CustomerID = this.CustomerID
     }
 }
 
@@ -74,7 +75,9 @@ class TotalSales
 {
     constructor(SaleQuantity,AdminID,CustomerID)
     {
-        
+        this.SaleQuantity = SaleQuantity
+        this.AdminID = AdminID
+        this.CustomerID = CustomerID
     }
 }
 
