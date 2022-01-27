@@ -3,7 +3,7 @@ import './App.css';
 
 const LoginForm = ({ Login , error }) =>
 {
-    const [details , setDetails] = useState({name: "", email: "", password: ""});
+    const [details , setDetails] = useState({id:0,email: "", password: ""});
 
     const submitHandler = e =>
     {
@@ -26,13 +26,13 @@ const LoginForm = ({ Login , error }) =>
                     ""
                 }
                 <div className="form-group">
-                    <label htmlFor="name" id="name">Name: </label>
-                    <input type="text" name="name" id="name" onChange={e => 
+                    <label htmlFor="id" id="id">Customer ID: </label>
+                    <input type="number" name="id" id="id" onChange={e => 
                             setDetails(
                                         {
-                                            ...details, name : e.target.value
+                                            ...details, id : parseInt(e.target.value)
                                         }
-                                      )} value={details.name} />
+                                      )} value={details.id} />
                 </div> <br/>
                 <div className="form-group">
                     <label htmlFor="email">Email: </label>

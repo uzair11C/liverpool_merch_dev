@@ -8,7 +8,8 @@ function CustomerApp()
     <Router basename="/customerhome">
       <Header />
       <Routes> {/*switch has been renamed to Routes*/}
-        <Route path = '/' element={<CustomerHome />}></Route>
+        <Route exact path = '/' element={<CustomerHome />}></Route>
+        {/* <Route exact path='/about-us' element={<About />} ></Route> */}
       </Routes>
     </Router>
   );

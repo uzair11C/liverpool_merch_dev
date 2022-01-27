@@ -115,19 +115,14 @@ BEGIN
 	WHERE @Quantity = 0
 END
 
- /*
- CREATE TRIGGER addAdminID
- ON Admin
- AFTER INSERT
- AS
- BEGIN
-	Insert into Product (AdminID)
-	(SELECT (AdminID) FROM dbo.Admin)
- END
- */
+CREATE PROCEDURE Display_Products
+AS
+BEGIN
+		SELECT * FROM PRODUCT
+END;
 
 
-
+EXECUTE Display_Products
 
 
 --Drop Table Queries

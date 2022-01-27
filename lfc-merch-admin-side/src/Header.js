@@ -8,9 +8,9 @@ const Header = () =>
         //<nav className={cheader ? "cheader active navbar navbar-expand-md" : "cheader navbar navbar-expand-md"}>
         <nav className={"navbar navbar-expand-lg"}>
 
-            <Link className="navbar-brand" to='/admin-dashboard/'>
+            <Link className="navbar-brand" to='/'>
                 {/* <h2>Logo</h2> */}
-                <img src="./assets/images/Icon-for-profiles.png" alt='Logo' />
+                <img src="assets/images/l-logo.jpg" alt='Logo' />
             </Link>
 
             <button className="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">

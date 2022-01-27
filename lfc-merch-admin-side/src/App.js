@@ -14,29 +14,18 @@ function App() {
     password : "admin"
   }
 
-  const [user, setUser] = useState({id:"",name:"", email:""});
+  const [user, setUser] = useState({id:0,email:""});
   const [error , setError] = useState("");
-
-  // useEffect(() => 
-  // {
-  //   const loggedInUser = reactLocalStorage.get('user')
-  //   if (loggedInUser)
-  //   {
-  //     const foundUser = JSON.parse(loggedInUser)
-  //     setCurrentUser(foundUser)
-  //   }
-  // }, [])
 
   const Login = details => 
   {
     console.log(details);
-    if(details.email === adminUser.email && details.password === adminUser.password)
+    if(details.id === adminUser.id && details.password === adminUser.password)
     {
       console.log("Logged In!");
       setUser(
         {
-          id: details.id,
-          name: details.name,
+          id: parseInt(details.id),
           email: details.email
         }
       )
@@ -53,7 +42,7 @@ function App() {
     console.log("Logged out!");
     setUser(
       {
-        id:"",name:"", email:""
+        id:null, email:""
       }
     )
   }
@@ -62,7 +51,7 @@ function App() {
     <>
         <div>
           {
-            (user.email !== "" && user.password !== "") 
+            (user.id !== null && user.password !== "") 
             ?
             (<>
               <AdminApp />

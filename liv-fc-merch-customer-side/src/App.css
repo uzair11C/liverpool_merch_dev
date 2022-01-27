@@ -18,6 +18,7 @@
 
 input, button
 {
+  box-sizing: border-box;
   appearance: none;
   background: none;
   border: none;

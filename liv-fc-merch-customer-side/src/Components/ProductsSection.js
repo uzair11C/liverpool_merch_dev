@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import "./ProductsSection.css";
 
 function ProductsSection()
 {
-    const[addName,setAddName] = useState([])
+    const[addName,setAddName] = useState({
+                                            Name: '',
+                                            Type: '',
+                                            Price: 0
+                                         })
     const[addPrice,setAddPrice] = useState([])
 
     const AddToCart = () =>
@@ -11,6 +15,26 @@ function ProductsSection()
         setAddName(this.Name)
         setAddPrice(this.Price)
         window.alert('Added to Cart!')
+    }
+
+    const [product, setProduct] = useState([])
+
+    useEffect(
+        () =>
+        {
+            fetchProducts();
+        }
+    ,[]
+    )
+
+    const fetchProducts = async () =>
+    {
+        const data = await fetch(
+                                'http://localhost:8000/api/products'
+                           )
+        const product2 = await data.json()
+        setProduct(product2)
+        console.log(product2)
     }
 
     return (
@@ -41,15 +65,9 @@ function ProductsSection()
                     <div className="tab-content" id="myTabContent">
                         <div className="tab-pane fade show active" id="kits" role="tabpanel" aria-labelledby="kits-tab">
                             <div className='row' style={{padding: "5px"}}>
-                                <div className='col-lg-4'>
-                                    
-                                </div>
-                                <div className='col-lg-4'>
-                                    
-                                </div>
-                                <div className='col-lg-4'>
+                        {product.map(prod=>(<div key ={prod.ProductID} className='col-lg-4'>
                                     <div style={{
-                                       border: "2px solid #01FF0E",
+                                        border: "2px solid #01FF0E",
                                         borderRadius:"10px",
                                         display:'flex',
                                         flexDirection:'column',
@@ -57,20 +75,17 @@ function ProductsSection()
                                         padding:'10px',
                                         margin:'20px'
                                     }} className='col-lg-12'>
-                                       <img 
-                                        src = "https://i.pinimg.com/236x/b3/cd/d5/b3cdd54558c0377841f66ec6083d9040--football-design-all-black.jpg" 
+                                        <img 
+                                        src = {prod.ImageURL} 
                                         alt = 'place-holder' 
                                         width='300px' 
                                         height='240px' 
                                         /> 
-                                        <h3 style={{marginTop:"20px"}}>Football Black</h3>
+                                        <h3 style={{marginTop:"20px"}}>{prod.ProductName}</h3>
                                         <h3>Price: 30$</h3>
                                         <p>Quantity: 5</p>
-                                        <button onClick={AddToCart} className='buy-button'>
-                                            Add To Cart
-                                        </button>
                                     </div>
-                                </div>
+                                </div>))}
                             </div>
                         </div>
                         <div className="tab-pane fade" id="footballs" role="tabpanel" aria-labelledby="footballs-tab">

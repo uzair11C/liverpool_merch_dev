@@ -23,7 +23,7 @@ const Header = () =>
                         <Link className="nav-link" to='/'><h2>Home</h2></Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to = '/about'><h2>About</h2></Link>
+                        <Link className="nav-link" to = '/about-us'><h2>About</h2></Link>
                     </li>
                     {/* <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" 
