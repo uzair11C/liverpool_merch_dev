@@ -1,38 +1,89 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: #53565A; */
+  background-image: url('./assets/images/liv_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.App-link {
-  color: #61dafb;
+*
+{
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  font-family: sans-serif;
+}
+/* 
+input, button
+{
+  box-sizing: border-box;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+} */
+
+h2
+{
+  color: rgb(255, 255, 255);
+  font-size: 37px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input
+{
+  margin-bottom: 20px !important;
+}
+
+/* form .form-inner input[type="submit"], .welcome button,  */
+
+.log-tog
+{
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #00a357 50%, #81f872 50%, #09ff00);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: #fff;
+  font-weight: 700;
+  font-size: 23px;
+  cursor:pointer;
+  margin: 0;
+  margin-left: 250px;
+  margin-top: 200px;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+form .form-inner input[type="submit"]:hover, .welcome button, .log-tog:hover
+{
+  background-position: 100% 0%;
+}
+
+.form-control:focus 
+{
+  border-color: #00ff0d !important;
+  box-shadow: 0 0 0 0.25rem #01ff0ed7 !important;
+}
+
+.form-check-input:checked
+{
+  background-color: #00ff0d !important;
+  border-color: #00ff0d !important;
+  box-shadow: 0 0 0 0.25rem #00df0b69 !important;
+}
+
+.col-lg-4
+{
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  padding-top: 10px !important;
 }
